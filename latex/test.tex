@@ -1,0 +1,110 @@
+\documentclass[a4paper,12pt]{article}
+
+% 页面布局设置，对应 #set page
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+
+% 数学公式支持
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% 字体与中文支持，对应 #set text
+% 注意：在 Arch Linux 下，确保安装了 noto-fonts-cjk 包
+\usepackage{xeCJK}
+\usepackage{fontspec}
+\setCJKmainfont{Noto Sans CJK SC}
+\setmainfont{Noto Sans CJK SC} % 将西文也设为 Noto Sans 以保持一致
+
+% 标题格式定制，对应 #import numbly 和 set heading
+\usepackage{titlesec}
+\usepackage{zhnumber} % 用于生成中文数字
+
+% 自定义各级标题编号格式
+% 一级标题：一、
+\renewcommand{\thesection}{\zhnum{section}、}
+% 二级标题：1.
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+% 三级标题：a.
+\renewcommand{\thesubsubsection}{\alph{subsubsection}.}
+% 四级标题：i.
+\renewcommand{\theparagraph}{\roman{paragraph}.}
+
+% 生成虚拟文本，对应 #lorem
+\usepackage{lipsum}
+
+\begin{document}
+
+% 对应 = 我的第一个 Typst 文档
+\section{我的第一个 Typst 文档}
+
+% #lorem(10)
+\lipsum[1][1-2] % 这里简单用 lipsum 代替
+
+% 数学公式，对应 $ x^2 + y^2 = z^2 $
+\begin{equation}
+    x^2 + y^2 = z^2
+\end{equation}
+
+restaurant
+
+% 对应默认左对齐
+文字默认是左对齐的。
+
+% 对应 #align(center)
+\begin{center}
+    但我想临时居中！
+\end{center}
+
+而不影响其他文字。
+
+% 行内公式
+$E = m c^2 $
+
+% 全局对齐设置
+% LaTeX 的环境作用域和 Typst 的 #set 略有不同，这里用分组或开关命令
+
+% #set align(left)
+\raggedright
+这行字左对齐
+
+% #set align(right)
+\raggedleft
+这行字右对齐
+
+% #set align(center)
+\centering
+这行字居中
+
+% 恢复左对齐以便显示列表
+\raggedright
+
+% 列表部分
+\begin{enumerate}
+    \item hello
+    \begin{itemize}
+        \item hello
+    \end{itemize}
+    \item hello
+    \item hello % LaTeX 会自动处理序号，不需要手动写 4.
+    \item hello
+\end{enumerate}
+
+% 复杂的标题编号测试
+\section{一级标题}
+我走了。
+
+\subsection{二级标题}
+我来了。
+
+\subsection{二级标题}
+我来了吗？
+
+\subsubsection{三级标题}
+我走了又来了。
+
+% 空公式
+\[
+\]
+
+webapp forever
+
+\end{document}

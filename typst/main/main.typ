@@ -27,9 +27,7 @@ restaurant
 
 而不影响其他文字。
 
-
-
-
+$E = m c^2 $
 
 #set align(left)
 这行字左对齐
@@ -64,7 +62,7 @@ restaurant
 我走了又来了。
 
 $
-math
+
 $
 
 

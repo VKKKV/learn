@@ -1,1 +1,1 @@
-/home/arch/vspro/demo/learn/rust/learn/world_hello/target/debug/world_hello: /home/arch/vspro/demo/learn/rust/learn/world_hello/src/main.rs
+/home/kita/code/learn-anything/rust/learn/world_hello/target/debug/world_hello: /home/kita/code/learn-anything/rust/learn/world_hello/src/main.rs
