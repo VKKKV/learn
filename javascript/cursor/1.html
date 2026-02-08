@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Cursor Demo - Arch Style</title>
+    <style>
+        /*
+         * Global Reset & Theme
+         * Keeping it clean like a fresh Arch install.
+         */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #1a1b26; /* Tokyo Night style */
+            color: #a9b1d6;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            height: 200vh; /* Extra height for scroll testing */
+            cursor: none; /* Hide default cursor to let the JS take over */
+            overflow-x: hidden;
+        }
+
+        /*
+         * Custom Cursor Element
+         * ID: cursorCircle
+         */
+        #cursorCircle {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 30px; /* circleSize in JS */
+            height: 30px;
+            border: 2px solid #7aa2f7; /* Arch Blue */
+            border-radius: 50%;
+            pointer-events: none; /* Let clicks pass through to elements below */
+            z-index: 9999;
+            transform-origin: center center;
+            /* Start off-screen to prevent flickering on load */
+            transform: translate(-100px, -100px);
+            will-change: transform; /* Optimize for performance */
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        /*
+         * Interactive Elements
+         * These trigger the magnetic/scaling effects
+         */
+        a {
+            color: #7aa2f7;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 1px solid rgba(122, 162, 247, 0.3);
+            border-radius: 4px;
+            display: inline-block;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        a:hover {
+            border-color: #7aa2f7;
+        }
+
+        /*
+         * Gallery Section Logic
+         * Target: .image_container parent
+         */
+        .gallery-wrapper {
+            margin-top: 50px;
+            padding: 50px;
+            border: 1px dashed #414868;
+        }
+
+        .image_container {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        /*
+         * Scroll To Top Button
+         * ID: scrollTop
+         */
+        #scrollTop {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+            background: #f7768e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: none;
+            visibility: hidden;
+            transform: scale(0);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        #scrollTop::after {
+            content: "↑";
+            color: #1a1b26;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        audio {
+            margin-top: 50px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cursorCircle"></div>
+
+    <div class="container">
+        <h1>Physics Cursor Demo</h1>
+        <p>
+            This is a demonstration of a physics-based custom cursor using <code>lerp</code> and <code>smoothing</code>.
+            It feels as smooth as Hyprland running at 144Hz.
+        </p>
+
+        <p>
+            Try hovering over this link: <a href="#">HOVER ME</a>
+        </p>
+
+        <p>Or interact with the audio player:</p>
+        <audio controls src=""></audio>
+
+        <div class="gallery-wrapper">
+            <p>Gallery Testing Area:</p>
+            <div class="image_container">
+                <a href="#">
+                    <img src="https://archlinux.org/static/logos/archlinux-logo-dark-90dpi.ebcb74163a1d.png" alt="Arch Linux" style="height: 50px;">
+                </a>
+            </div>
+        </div>
+
+        <p style="margin-top: 800px;">
+            Scroll down to test the "Back to Top" button logic.
+        </p>
+    </div>
+
+    <div id="scrollTop"></div>
+
+    <script>
+        /**
+         * Utility Functions
+         */
+        const scrollToElement = (query) => {
+            const el = document.querySelector(query);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        };
+
+        const scrollReveal = (btn) => {
+            const isScrolled = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20;
+            btn.style.visibility = isScrolled ? "visible" : "hidden";
+            btn.style.transform = isScrolled ? "scale(1)" : "scale(0)";
+        };
+
+        const scrollToTop = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        const smoothing = (target, current, decay, dt) => {
+            return target + (current - target) * Math.exp(-decay * dt);
+        };
+
+        const lerp = (a, b, t) => a + (b - a) * t;
+
+        /**
+         * Device Check
+         */
+        const isMobile = () => {
+            const ua = navigator.userAgent;
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+        };
+
+        // Initialize scroll button
+        const scrollBtn = document.getElementById("scrollTop");
+        if (scrollBtn) {
+            scrollBtn.addEventListener("click", scrollToTop);
+            window.addEventListener("scroll", () => scrollReveal(scrollBtn));
+        }
+
+        /**
+         * Cursor Physics Logic
+         */
+        const cursorCircleEl = document.getElementById("cursorCircle");
+
+        // State variables
+        const mouse = { x: 0, y: 0 };
+        const prevCircle = { x: 0, y: 0 };
+        const circle = { x: 0, y: 0, scale: 1, speed: 0 };
+
+        let targetScale = 1;
+        let activeTarget = null;
+        let lastTick = performance.now();
+
+        // Constants
+        const SMOOTHING_FACTOR = 15;
+        const PHI = (1 + Math.sqrt(5)) / 2; // Golden ratio for scaling
+        const STICK_FACTOR = PHI - 1;       // Stickiness for magnetic effect
+        const CIRCLE_SIZE = 30;
+
+        // Track mouse movement
+        document.addEventListener("mousemove", (e) => {
+            if (targetScale === 1) {
+                mouse.x = e.clientX;
+                mouse.y = e.clientY;
+            } else if (activeTarget) {
+                const rect = activeTarget.getBoundingClientRect();
+                const targetX = activeTarget.tagName === "AUDIO" ? rect.left : (rect.left + rect.right) / 2;
+                const targetY = (rect.top + rect.bottom) / 2;
+
+                // Magnetic pull effect
+                mouse.x = lerp(e.clientX, targetX, STICK_FACTOR);
+                mouse.y = lerp(e.clientY, targetY, STICK_FACTOR);
+            }
+        });
+
+        // Handle interactions (scaling & magnetic targets)
+        document.addEventListener("mouseover", (e) => {
+            let isImportant = false;
+            let isGallery = false;
+            let target = null;
+
+            // Traverse up to find interesting elements
+            for (let el = e.target; el && el !== document; el = el.parentElement) {
+                if (["A", "AUDIO"].includes(el.tagName) || el.id === "scrollTop") {
+                    isImportant = true;
+                    target = el;
+                    break;
+                }
+            }
+
+            // Specific gallery logic
+            if (target && target.parentElement?.classList.contains("image_container")) {
+                target = target.parentElement.parentElement;
+                isGallery = true;
+            }
+
+            activeTarget = target;
+
+            if (isImportant && target) {
+                const minDim = Math.min(target.clientHeight, target.clientWidth);
+                targetScale = (minDim / CIRCLE_SIZE) * (isGallery ? STICK_FACTOR : PHI);
+            } else {
+                targetScale = 1;
+            }
+        });
+
+        /**
+         * Animation Loop
+         */
+        function updateCursor(tick) {
+            const dt = (tick - lastTick) / 1000;
+            lastTick = tick;
+
+            if (!isNaN(dt) && dt > 0) {
+                // Smooth position and scale
+                circle.x = smoothing(mouse.x, circle.x, SMOOTHING_FACTOR, dt);
+                circle.y = smoothing(mouse.y, circle.y, SMOOTHING_FACTOR, dt);
+                circle.scale = smoothing(targetScale, circle.scale, SMOOTHING_FACTOR, dt);
+
+                // Calculate velocity for stretching effect
+                const dx = prevCircle.x - circle.x;
+                const dy = prevCircle.y - circle.y;
+                const speed = Math.sqrt(dx * dx + dy * dy);
+
+                circle.speed = smoothing(speed, circle.speed, SMOOTHING_FACTOR, dt);
+                const speedRemap = Math.min(circle.speed / 100, 0.5); // Cap stretch
+
+                const angle = Math.atan2(dy, dx);
+                const offset = CIRCLE_SIZE / 2;
+
+                // Apply transformations
+                const translate = `translate(${circle.x - offset}px, ${circle.y - offset}px)`;
+                const rotate = `rotate(${angle}rad)`;
+                const stretch = `scale(${1 + speedRemap}, ${1 - speedRemap})`;
+                const scale = `scale(${circle.scale})`;
+
+                cursorCircleEl.style.transform = `${translate} ${rotate} ${stretch} ${scale}`;
+
+                prevCircle.x = circle.x;
+                prevCircle.y = circle.y;
+            }
+
+            requestAnimationFrame(updateCursor);
+        }
+
+        // Initialize if not on mobile
+        if (!isMobile()) {
+            requestAnimationFrame(updateCursor);
+        } else {
+            if (cursorCircleEl) cursorCircleEl.remove();
+            document.body.style.cursor = "auto";
+        }
+    </script>
+</body>
+</html>

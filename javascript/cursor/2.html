@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Stalker Demo - The Arch Way</title>
+    <style>
+        /*
+         * Global Styles & Theme
+         * Dark mode is the standard.
+         */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1b26; /* Tokyo Night */
+            color: #c0caf5;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            cursor: none; /* Hide default cursor */
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            z-index: 1;
+        }
+
+        /* Interactive Elements */
+        h1, button, a, .toggle, #exturl {
+            margin: 10px;
+            padding: 10px 20px;
+            border: 1px solid #414868;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        a { color: #7aa2f7; text-decoration: none; }
+        button { background: #73daca; color: #15161e; border: none; cursor: pointer; font-family: inherit; font-size: 1rem;}
+        .toggle { background: #bb9af7; color: #15161e; }
+        #exturl { border-color: #f7768e; color: #f7768e; }
+        #post-title { font-size: 2.5rem; border: none; color: #fff; }
+
+        /*
+         * Mouse Stalker Styles
+         */
+        @media (any-hover: hover) {
+            #mouse_stalker {
+                pointer-events: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 30px;
+                height: 30px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                border-radius: 50%;
+                /* Offset to center the stalker on the mouse */
+                margin: -15px 0 0 -15px;
+                transform: translate(0, 0);
+                transition: transform 0.1s linear, width 0.3s ease, height 0.3s ease, margin 0.3s ease;
+                z-index: 99999;
+            }
+
+            /* Pointer state for hover effects */
+            #mouse_stalker.stalker_cursor_pointer {
+                width: 60px;
+                height: 60px;
+                margin: -30px 0 0 -30px;
+                background: rgba(122, 162, 247, 0.1);
+                border-color: #7aa2f7;
+            }
+
+            #mouse_stalker.stalker_cursor_pointer::before {
+                content: "";
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                right: -2px;
+                bottom: -2px;
+                border: 1px solid #7aa2f7;
+                border-radius: 50%;
+                animation: pulse_effect 2s ease-out infinite;
+            }
+
+            @keyframes pulse_effect {
+                0% { transform: scale(1); opacity: 0.8; }
+                80% { opacity: 0; }
+                100% { transform: scale(1.8); opacity: 0; }
+            }
+        }
+
+        /* Disable on touch devices */
+        @media (any-hover: none) {
+            #mouse_stalker { display: none; }
+            body { cursor: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="mouse_stalker"></div>
+
+    <div class="container">
+        <h1 id="post-title">I use Arch BTW</h1>
+
+        <div>
+            <a href="https://archlinux.org" target="_blank">Download ISO</a>
+            <button>Compile Kernel</button>
+        </div>
+
+        <div>
+            <div class="toggle">Toggle Systemd</div>
+            <span id="exturl">AUR Package</span>
+        </div>
+
+        <p>Move your mouse and hover over elements to see the transition.</p>
+    </div>
+
+    <script>
+        const stalker = document.getElementById('mouse_stalker');
+        const SELECTORS = "a, button, .toggle, #exturl, #post-title";
+        const HOVER_CLASS = "stalker_cursor_pointer";
+
+        /**
+         * Update stalker position
+         */
+        const handleMouseMove = (e) => {
+            stalker.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        };
+
+        /**
+         * Hover Handlers
+         */
+        const handleMouseOver = () => stalker.classList.add(HOVER_CLASS);
+        const handleMouseOut = () => stalker.classList.remove(HOVER_CLASS);
+
+        /**
+         * Event Management
+         */
+        const setupStalker = () => {
+            document.addEventListener('mousemove', handleMouseMove);
+
+            const elements = document.querySelectorAll(SELECTORS);
+            elements.forEach(el => {
+                el.addEventListener('mouseover', handleMouseOver);
+                el.addEventListener('mouseout', handleMouseOut);
+            });
+        };
+
+        const teardownStalker = () => {
+            document.removeEventListener('mousemove', handleMouseMove);
+
+            const elements = document.querySelectorAll(SELECTORS);
+            elements.forEach(el => {
+                el.removeEventListener('mouseover', handleMouseOver);
+                el.removeEventListener('mouseout', handleMouseOut);
+            });
+        };
+
+        // Initialize
+        if (window.matchMedia("(any-hover: hover)").matches) {
+            setupStalker();
+            window.addEventListener('beforeunload', teardownStalker);
+        }
+    </script>
+</body>
+</html>
