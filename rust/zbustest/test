@@ -1,0 +1,1323 @@
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1275  Timestamp="Sat 2026-02-07 10:16:27.094591 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8803  ReplyCookie=1275  Timestamp="Sat 2026-02-07 10:16:27.094766 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1276  Timestamp="Sat 2026-02-07 10:16:27.094933 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 68;
+                  BYTE 50;
+                  BYTE 55;
+                  BYTE 66;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1277  Timestamp="Sat 2026-02-07 10:16:27.098060 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8804  ReplyCookie=1277  Timestamp="Sat 2026-02-07 10:16:27.098253 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1278  Timestamp="Sat 2026-02-07 10:16:27.098395 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 77;
+                  BYTE 90;
+                  BYTE 70;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1279  Timestamp="Sat 2026-02-07 10:16:27.099843 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8805  ReplyCookie=1279  Timestamp="Sat 2026-02-07 10:16:27.099954 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1280  Timestamp="Sat 2026-02-07 10:16:27.100071 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 65;
+                  BYTE 86;
+                  BYTE 79;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1281  Timestamp="Sat 2026-02-07 10:16:27.101267 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8806  ReplyCookie=1281  Timestamp="Sat 2026-02-07 10:16:27.101411 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1282  Timestamp="Sat 2026-02-07 10:16:27.101533 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 75;
+                  BYTE 52;
+                  BYTE 80;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1283  Timestamp="Sat 2026-02-07 10:16:27.103328 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8807  ReplyCookie=1283  Timestamp="Sat 2026-02-07 10:16:27.103442 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1284  Timestamp="Sat 2026-02-07 10:16:27.103571 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 65;
+                  BYTE 68;
+                  BYTE 82;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1285  Timestamp="Sat 2026-02-07 10:16:27.104872 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8808  ReplyCookie=1285  Timestamp="Sat 2026-02-07 10:16:27.104990 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1286  Timestamp="Sat 2026-02-07 10:16:27.105115 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 84;
+                  BYTE 76;
+                  BYTE 77;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1287  Timestamp="Sat 2026-02-07 10:16:27.109244 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8809  ReplyCookie=1287  Timestamp="Sat 2026-02-07 10:16:27.109383 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1288  Timestamp="Sat 2026-02-07 10:16:27.109676 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 69;
+                  BYTE 66;
+                  BYTE 79;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1289  Timestamp="Sat 2026-02-07 10:16:27.112618 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8810  ReplyCookie=1289  Timestamp="Sat 2026-02-07 10:16:27.112760 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1290  Timestamp="Sat 2026-02-07 10:16:27.112911 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 80;
+                  BYTE 67;
+                  BYTE 88;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1291  Timestamp="Sat 2026-02-07 10:16:27.114609 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8811  ReplyCookie=1291  Timestamp="Sat 2026-02-07 10:16:27.114723 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1292  Timestamp="Sat 2026-02-07 10:16:27.114873 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 49;
+                  BYTE 51;
+                  BYTE 84;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1293  Timestamp="Sat 2026-02-07 10:16:27.116129 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8812  ReplyCookie=1293  Timestamp="Sat 2026-02-07 10:16:27.116264 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1294  Timestamp="Sat 2026-02-07 10:16:27.116398 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 75;
+                  BYTE 76;
+                  BYTE 49;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1295  Timestamp="Sat 2026-02-07 10:16:27.117679 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8813  ReplyCookie=1295  Timestamp="Sat 2026-02-07 10:16:27.117808 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1296  Timestamp="Sat 2026-02-07 10:16:27.117932 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 81;
+                  BYTE 82;
+                  BYTE 50;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=1297  Timestamp="Sat 2026-02-07 10:16:27.119111 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=GetTreeFromDevice
+  UniqueName=:1.47
+  MESSAGE "uu" {
+          UINT32 0;
+          UINT32 45;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=8814  ReplyCookie=1297  Timestamp="Sat 2026-02-07 10:16:27.119251 UTC"
+  Sender=:1.42  Destination=:1.47
+  UniqueName=:1.42
+  MESSAGE "s" {
+          STRING "";
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=1298  Timestamp="Sat 2026-02-07 10:16:27.119379 UTC"
+  Sender=:1.47  Destination=:1.42  Path=/org/gtk/vfs/metadata  Interface=org.gtk.vfs.Metadata  Member=Remove
+  UniqueName=:1.47
+  MESSAGE "ayay" {
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 104;
+                  BYTE 111;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 107;
+                  BYTE 105;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 46;
+                  BYTE 108;
+                  BYTE 111;
+                  BYTE 99;
+                  BYTE 97;
+                  BYTE 108;
+                  BYTE 47;
+                  BYTE 115;
+                  BYTE 104;
+                  BYTE 97;
+                  BYTE 114;
+                  BYTE 101;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 118;
+                  BYTE 102;
+                  BYTE 115;
+                  BYTE 45;
+                  BYTE 109;
+                  BYTE 101;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 100;
+                  BYTE 97;
+                  BYTE 116;
+                  BYTE 97;
+                  BYTE 47;
+                  BYTE 114;
+                  BYTE 111;
+                  BYTE 111;
+                  BYTE 116;
+                  BYTE 0;
+          };
+          ARRAY "y" {
+                  BYTE 47;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 47;
+                  BYTE 103;
+                  BYTE 100;
+                  BYTE 107;
+                  BYTE 45;
+                  BYTE 112;
+                  BYTE 105;
+                  BYTE 120;
+                  BYTE 98;
+                  BYTE 117;
+                  BYTE 102;
+                  BYTE 45;
+                  BYTE 103;
+                  BYTE 108;
+                  BYTE 121;
+                  BYTE 99;
+                  BYTE 105;
+                  BYTE 110;
+                  BYTE 45;
+                  BYTE 116;
+                  BYTE 109;
+                  BYTE 112;
+                  BYTE 46;
+                  BYTE 72;
+                  BYTE 77;
+                  BYTE 51;
+                  BYTE 67;
+                  BYTE 75;
+                  BYTE 51;
+                  BYTE 0;
+          };
+  };
+
+‣ Type=signal  Endian=l  Flags=1  Version=1 Cookie=1299  Timestamp="Sat 2026-02-07 10:16:27.119994 UTC"
+  Sender=:1.47  Path=/org/ayatana/NotificationItem/udiskie/Menu  Interface=com.canonical.dbusmenu  Member=LayoutUpdated
+  UniqueName=:1.47
+  MESSAGE "ui" {
+          UINT32 559;
+          INT32 0;
+  };
+
+‣ Type=signal  Endian=l  Flags=1  Version=1 Cookie=1300  Timestamp="Sat 2026-02-07 10:16:27.120015 UTC"
+  Sender=:1.47  Path=/org/ayatana/NotificationItem/udiskie/Menu  Interface=com.canonical.dbusmenu  Member=ItemsPropertiesUpdated
+  UniqueName=:1.47
+  MESSAGE "a(ia{sv})a(ias)" {
+          ARRAY "(ia{sv})" {
+                  STRUCT "ia{sv}" {
+                          INT32 0;
+                          ARRAY "{sv}" {
+                                  DICT_ENTRY "sv" {
+                                          STRING "children-display";
+                                          VARIANT "s" {
+                                                  STRING "submenu";
+                                          };
+                                  };
+                          };
+                  };
+          };
+          ARRAY "(ias)" {
+          };
+  };
+
+‣ Type=method_call  Endian=l  Flags=1  Version=1 Cookie=39825  Timestamp="Sat 2026-02-07 10:16:27.868705 UTC"
+  Sender=:1.41  Destination=:1.29  Path=/org/freedesktop/portal/inputcontext/63  Interface=org.fcitx.Fcitx.InputContext1  Member=SetCursorRectV2
+  UniqueName=:1.41
+  MESSAGE "iiiid" {
+          INT32 10;
+          INT32 1071;
+          INT32 1;
+          INT32 1;
+          DOUBLE 1;
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=39826  Timestamp="Sat 2026-02-07 10:16:27.868763 UTC"
+  Sender=:1.41  Destination=:1.29  Path=/org/freedesktop/portal/inputcontext/63  Interface=org.fcitx.Fcitx.InputContext1  Member=ProcessKeyEventBatch
+  UniqueName=:1.41
+  MESSAGE "uuubu" {
+          UINT32 65507;
+          UINT32 37;
+          UINT32 0;
+          BOOLEAN false;
+          UINT32 23421913;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=68861  ReplyCookie=39826  Timestamp="Sat 2026-02-07 10:16:27.868869 UTC"
+  Sender=:1.29  Destination=:1.41
+  UniqueName=:1.29
+  MESSAGE "a(uv)b" {
+          ARRAY "(uv)" {
+          };
+          BOOLEAN false;
+  };
+
+‣ Type=method_call  Endian=l  Flags=0  Version=1 Cookie=39827  Timestamp="Sat 2026-02-07 10:16:27.869560 UTC"
+  Sender=:1.41  Destination=:1.29  Path=/org/freedesktop/portal/inputcontext/63  Interface=org.fcitx.Fcitx.InputContext1  Member=ProcessKeyEventBatch
+  UniqueName=:1.41
+  MESSAGE "uuubu" {
+          UINT32 99;
+          UINT32 54;
+          UINT32 4;
+          BOOLEAN false;
+          UINT32 23421914;
+  };
+
+‣ Type=signal  Endian=l  Flags=1  Version=1 Cookie=68862  Timestamp="Sat 2026-02-07 10:16:27.869674 UTC"
+  Sender=:1.29  Destination=:1.41  Path=/org/freedesktop/portal/inputcontext/63  Interface=org.fcitx.Fcitx.InputContext1  Member=UpdateClientSideUI
+  UniqueName=:1.29
+  MESSAGE "a(si)ia(si)a(si)a(ss)iibb" {
+          ARRAY "(si)" {
+          };
+          INT32 -1;
+          ARRAY "(si)" {
+          };
+          ARRAY "(si)" {
+          };
+          ARRAY "(ss)" {
+          };
+          INT32 0;
+          INT32 0;
+          BOOLEAN false;
+          BOOLEAN false;
+  };
+
+‣ Type=method_return  Endian=l  Flags=1  Version=1 Cookie=68863  ReplyCookie=39827  Timestamp="Sat 2026-02-07 10:16:27.869702 UTC"
+  Sender=:1.29  Destination=:1.41
+  UniqueName=:1.29
+  MESSAGE "a(uv)b" {
+          ARRAY "(uv)" {
+          };
+          BOOLEAN false;
+  };
+

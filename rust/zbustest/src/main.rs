@@ -1,10 +1,11 @@
-use futures_util::stream::StreamExt;
+use futures_util::StreamExt;
 use serde::{Deserialize, Serialize};
 use std::collections::{HashMap, HashSet};
+use std::convert::TryFrom;
 use std::error::Error;
 use zbus::{
-    dbus_proxy,
-    zvariant::{OwnedObjectPath, OwnedValue, Type, Value},
+    proxy,
+    zvariant::{OwnedObjectPath, Type, Value},
     Connection,
 };
 
@@ -13,75 +14,72 @@ use zbus::{
 // ============================================================================
 
 mod fdo {
-    use zbus::dbus_proxy;
-    #[dbus_proxy(
+    use zbus::proxy;
+    #[proxy(
         interface = "org.freedesktop.StatusNotifierWatcher",
         default_service = "org.freedesktop.StatusNotifierWatcher",
         default_path = "/StatusNotifierWatcher"
     )]
     pub trait StatusNotifierWatcher {
-        #[dbus_proxy(property, name = "RegisteredStatusNotifierItems")]
+        #[zbus(property, name = "RegisteredStatusNotifierItems")]
         fn registered_status_notifier_items(&self) -> zbus::Result<Vec<String>>;
 
-        #[dbus_proxy(signal, name = "StatusNotifierItemRegistered")]
+        #[zbus(signal, name = "StatusNotifierItemRegistered")]
         fn status_notifier_item_registered(&self, service: &str) -> zbus::Result<()>;
     }
 }
 
 mod kde {
-    use zbus::dbus_proxy;
-    #[dbus_proxy(
+    use zbus::proxy;
+    #[proxy(
         interface = "org.kde.StatusNotifierWatcher",
         default_service = "org.kde.StatusNotifierWatcher",
         default_path = "/StatusNotifierWatcher"
     )]
     pub trait StatusNotifierWatcher {
-        #[dbus_proxy(property, name = "RegisteredStatusNotifierItems")]
+        #[zbus(property, name = "RegisteredStatusNotifierItems")]
         fn registered_status_notifier_items(&self) -> zbus::Result<Vec<String>>;
 
-        #[dbus_proxy(signal, name = "StatusNotifierItemRegistered")]
+        #[zbus(signal, name = "StatusNotifierItemRegistered")]
         fn status_notifier_item_registered(&self, service: &str) -> zbus::Result<()>;
     }
 }
 
-#[dbus_proxy(
+#[proxy(
     interface = "org.freedesktop.StatusNotifierItem",
     default_path = "/StatusNotifierItem"
 )]
 trait StatusNotifierItem {
-    #[dbus_proxy(property)]
+    #[zbus(property)]
     fn id(&self) -> zbus::Result<String>;
 
-    #[dbus_proxy(property)]
+    #[zbus(property)]
     fn title(&self) -> zbus::Result<String>;
 
-    #[dbus_proxy(property)]
+    #[zbus(property)]
     fn menu(&self) -> zbus::Result<OwnedObjectPath>;
 }
 
-#[dbus_proxy(
-    interface = "com.canonical.dbusmenu",
-    assume_defaults = true
-)]
+#[proxy(interface = "com.canonical.dbusmenu", assume_defaults = true)]
 trait DBusMenu {
     fn get_layout(
         &self,
         parent_id: i32,
         recursion_depth: i32,
-        property_names: &[&str],
-    ) -> zbus::Result<(u32, LayoutNode)>;
+        property_names: Vec<String>,
+    ) -> zbus::Result<(u32, Value<'_>)>;
 }
 
 // ============================================================================
 // Data Structures
 // ============================================================================
 
-#[derive(Debug, Deserialize, Serialize, Type, Clone)]
-pub struct LayoutNode(i32, HashMap<String, OwnedValue>, Vec<OwnedValue>);
+#[derive(Debug, Type, Clone)]
+pub struct LayoutNode(i32, HashMap<String, Value<'static>>, Vec<Value<'static>>);
 
 impl LayoutNode {
-    fn from_value(value: &OwnedValue) -> Option<Self> {
-        let structure = match &**value {
+    fn from_value(value: &Value) -> Option<Self> {
+        let structure = match value {
             Value::Structure(s) => s,
             _ => return None,
         };
@@ -99,11 +97,11 @@ impl LayoutNode {
         let props = match &fields[1] {
             Value::Dict(d) => {
                 let mut map = HashMap::new();
-                // In zvariant 3.x, use iterator for Dict
-                for (k, v) in d.clone() {
-                     if let (Value::Str(k_str), v_val) = (k, v) {
-                         map.insert(k_str.to_string(), OwnedValue::from(v_val.clone()));
-                     }
+                for (k, v) in d.iter() {
+                    if let (Value::Str(k_str), v_val) = (k, v) {
+                        // v_val.clone() 会创建一个拥有所有权的新 Value，自动满足 'static
+                        map.insert(k_str.to_string(), v_val.clone().into());
+                    }
                 }
                 map
             }
@@ -113,7 +111,7 @@ impl LayoutNode {
         let children = match &fields[2] {
             Value::Array(a) => a
                 .iter()
-                .map(|v| OwnedValue::from(v.clone()))
+                .map(|v| v.clone().into()) // clone 并转换
                 .collect(),
             _ => Vec::new(),
         };
@@ -137,6 +135,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let mut known_services = HashSet::new();
 
     println!(":: Initial scan...");
+    // ... [Scan logic 保持不变] ...
     if let Ok(items) = fdo_watcher.registered_status_notifier_items().await {
         for service in items {
             if known_services.insert(service.clone()) {
@@ -153,29 +152,31 @@ async fn main() -> Result<(), Box<dyn Error>> {
         }
     }
 
-    let mut fdo_signals = fdo_watcher.receive_status_notifier_item_registered().await?;
-    let mut kde_signals = kde_watcher.receive_status_notifier_item_registered().await?;
+    let mut fdo_signals = fdo_watcher
+        .receive_status_notifier_item_registered()
+        .await?;
+    let mut kde_signals = kde_watcher
+        .receive_status_notifier_item_registered()
+        .await?;
 
     println!(":: Monitoring for new items...");
 
     loop {
         tokio::select! {
             Some(signal) = fdo_signals.next() => {
-                if let Ok(args) = signal.args() {
-                    let service = args.service();
-                    if known_services.insert(service.to_string()) {
-                        println!("\n[+] New item (FDO): {}", service);
-                        inspect_item(&conn, service).await;
-                    }
+                let args = signal.args()?;
+                let service = args.service;
+                if known_services.insert(service.to_string()) {
+                    println!("\n[+] New item (FDO): {}", service);
+                    inspect_item(&conn, &service).await;
                 }
             }
             Some(signal) = kde_signals.next() => {
-                if let Ok(args) = signal.args() {
-                    let service = args.service();
-                    if known_services.insert(service.to_string()) {
-                        println!("\n[+] New item (KDE): {}", service);
-                        inspect_item(&conn, service).await;
-                    }
+                let args = signal.args()?;
+                let service = args.service;
+                if known_services.insert(service.to_string()) {
+                    println!("\n[+] New item (KDE): {}", service);
+                    inspect_item(&conn, &service).await;
                 }
             }
         }
@@ -185,7 +186,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
 async fn inspect_item(conn: &Connection, service: &str) {
     let item_proxy = match StatusNotifierItemProxy::builder(conn)
         .destination(service)
-        .unwrap()
+        .expect("Invalid dest")
         .build()
         .await
     {
@@ -196,9 +197,15 @@ async fn inspect_item(conn: &Connection, service: &str) {
         }
     };
 
-    let id = item_proxy.id().await.unwrap_or_else(|_| "Unknown".to_string());
-    let title = item_proxy.title().await.unwrap_or_else(|_| "No Title".to_string());
-    
+    let id = item_proxy
+        .id()
+        .await
+        .unwrap_or_else(|_| "Unknown".to_string());
+    let title = item_proxy
+        .title()
+        .await
+        .unwrap_or_else(|_| "No Title".to_string());
+
     println!("   -> ID:    {}", id);
     println!("   -> Title: {}", title);
 
@@ -211,9 +218,9 @@ async fn inspect_item(conn: &Connection, service: &str) {
 async fn inspect_menu(conn: &Connection, service: &str, path: &OwnedObjectPath) {
     let menu_proxy = match DBusMenuProxy::builder(conn)
         .destination(service)
-        .unwrap()
+        .expect("Invalid dest")
         .path(path)
-        .unwrap()
+        .expect("Invalid path")
         .build()
         .await
     {
@@ -224,7 +231,8 @@ async fn inspect_menu(conn: &Connection, service: &str, path: &OwnedObjectPath) 
         }
     };
 
-    match menu_proxy.get_layout(0, -1, &[]).await {
+    // [修复点 2] 传入 vec![] 而不是 &[]，匹配 trait 定义的 Vec<String>
+    match menu_proxy.get_layout(0, -1, vec![]).await {
         Ok((_rev, root_node)) => {
             println!("      -> Layout Tree:");
             print_tree(&root_node, 0);
@@ -239,19 +247,22 @@ fn print_tree(node: &LayoutNode, depth: usize) {
     let indent = "        ".repeat(depth + 1);
     let LayoutNode(id, props, children) = node;
 
-    let label = props.get("label").and_then(|v| {
-        match &**v {
+    let label = props
+        .get("label")
+        .and_then(|v| match v {
             Value::Str(s) => Some(s.as_str()),
             _ => None,
-        }
-    }).unwrap_or("(no label)");
+        })
+        .unwrap_or("(no label)");
 
-    let is_visible = props.get("visible").map(|v| {
-        match &**v {
+    // [修复点 3] 移除 *b，直接匹配 b
+    let is_visible = props
+        .get("visible")
+        .map(|v| match v {
             Value::Bool(b) => *b,
             _ => true,
-        }
-    }).unwrap_or(true);
+        })
+        .unwrap_or(true);
 
     if !is_visible {
         return;
