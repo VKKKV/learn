@@ -78,14 +78,14 @@ def capture_packets(count: int = 5) -> None:
 
 def main():
     # Target for ICMP Ping (Google Public DNS)
-    ping_host("8.8.8.8")
+    # ping_host("8.8.8.8")
 
     # Local Subnet for ARP Scan (Adjust to your local network range)
     # Common ranges: 192.168.0.0/24, 10.0.0.0/24
-    arp_scan("192.168.0.0/24")
+    # arp_scan("192.168.0.0/24")
 
     # Capture traffic
-    # capture_packets(5)
+    capture_packets(5)
     pass
 
 
