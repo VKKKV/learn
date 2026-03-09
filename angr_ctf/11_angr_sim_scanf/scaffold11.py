@@ -17,36 +17,36 @@ def main(argv):
   class ReplacementScanf(angr.SimProcedure):
     # Finish the parameters to the scanf function. Hint: 'scanf("%u %u", ...)'.
     # (!)
-    def run(self, format_string, scanf0_address, ...):
+    def run(self, format_string, scanf0_address, scanf1_address):
       # Hint: scanf0_address is passed as a parameter, isn't it?
-      scanf0 = claripy.BVS('scanf0', ???)
-      ...
+      scanf0 = claripy.BVS('scanf0', 32)
+      scanf1 = claripy.BVS('scanf1', 32)
 
       # The scanf function writes user input to the buffers to which the 
       # parameters point.
       self.state.memory.store(scanf0_address, scanf0, endness=project.arch.memory_endness)
-      ...
+      self.state.memory.store(scanf1_address, scanf1, endness=project.arch.memory_endness)
 
       # Now, we want to 'set aside' references to our symbolic values in the
       # globals plugin included by default with a state. You will need to
       # store multiple bitvectors. You can either use a list, tuple, or multiple
       # keys to reference the different bitvectors.
       # (!)
-      self.state.globals['solution0'] = ???
-      ...
+      self.state.globals['solution0'] = scanf0 # type: ignore
+      self.state.globals['solution1'] = scanf1 # type: ignore
 
-  scanf_symbol = ???
+  scanf_symbol = "__isoc99_scanf"
   project.hook_symbol(scanf_symbol, ReplacementScanf())
 
   simulation = project.factory.simgr(initial_state)
 
   def is_successful(state):
     stdout_output = state.posix.dumps(sys.stdout.fileno())
-    return ???
+    return "Good".encode() in stdout_output
 
   def should_abort(state):
     stdout_output = state.posix.dumps(sys.stdout.fileno())
-    return ???
+    return "Try".encode() in stdout_output
 
   simulation.explore(find=is_successful, avoid=should_abort)
 
@@ -55,8 +55,12 @@ def main(argv):
 
     # Grab whatever you set aside in the globals dict.
     stored_solutions0 = solution_state.globals['solution0']
-    ...
-    solution = ???
+    stored_solutions1 = solution_state.globals['solution1']
+
+    val0 = solution_state.solver.eval(stored_solutions0)
+    val1 = solution_state.solver.eval(stored_solutions1)
+
+    solution = "{} {}".format(val0, val1)
 
     print(solution)
   else:
@@ -64,3 +68,4 @@ def main(argv):
 
 if __name__ == '__main__':
   main(sys.argv)
+  # 1447907916 1146768724
