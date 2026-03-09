@@ -1,0 +1,52 @@
+{
+    "item.mymod.sapphire": "Sapphire",
+    "item.mymod.raw_sapphire": "Raw Sapphire",
+    "block.mymod.sapphire_block": "Block of Sapphire",
+    "block.mymod.raw_sapphire_block": "Block of Raw Sapphire",
+    "block.mymod.wtf": "wtf",
+    "block.mymod.sapphire_ore": "Sapphire Ore",
+    "item.mymod.strawberry": "Strawberry",
+    "item.mymod.pine_cone": "Pine Cone",
+    "block.mymod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+    "block.mymod.end_stone_sapphire_ore": "Endstone Sapphire Ore",
+    "block.mymod.nether_sapphire_ore": "Nether Sapphire Ore",
+    "block.mymod.sound_block": "Sound Block",
+    "creativetab.tutorial_tab": "Sapphire Tutorial Tab",
+    "tooltip.metal_detector.description": "Finds valuables under the ground",
+    "tooltip.sound_block.description": "Plays a sound",
+
+    "item.mymod.sapphire_staff": "Sapphire Staff",
+
+    "item.mymod.sapphire_sword": "Sapphire Sword",
+    "item.mymod.sapphire_pickaxe": "Sapphire Pickaxe",
+    "item.mymod.sapphire_axe": "Sapphire Axe",
+    "item.mymod.sapphire_shovel": "Sapphire Shovel",
+    "item.mymod.sapphire_hoe": "Sapphire Hoe",
+
+    "block.mymod.sapphire_stairs": "Sapphire Stairs",
+    "block.mymod.sapphire_slab": "Sapphire Slab",
+    "block.mymod.sapphire_button": "Sapphire Button",
+    "block.mymod.sapphire_pressure_plate": "Sapphire Pressure Plate",
+    "block.mymod.sapphire_fence": "Sapphire Fence",
+    "block.mymod.sapphire_fence_gate": "Sapphire Fence Gate",
+    "block.mymod.sapphire_wall": "Sapphire Wall",
+    "block.mymod.sapphire_door": "Sapphire Door",
+    "block.mymod.sapphire_trapdoor": "Sapphire Trapdoor",
+
+    "item.mymod.sapphire_helmet": "Sapphire Helmet",
+    "item.mymod.sapphire_chestplate": "Sapphire Chestplate",
+    "item.mymod.sapphire_leggings": "Sapphire Leggings",
+    "item.mymod.sapphire_boots": "Sapphire Boots",
+
+    "item.mymod.strawberry_seeds": "Strawberry Seeds",
+    "item.mymod.corn": "Corn",
+    "item.mymod.corn_seeds": "Corn Seeds",
+
+    "block.mymod.gem_polishing_station": "Gem Polishing Station",
+
+    "block.mymod.catmint": "Catmint",
+    "entity.minecraft.villager.mymod.soundmaster": "Sound Master",
+    "sounds.mymod.metal_detector_found_ore": "Metal Detector Jingle",
+    "item.mymod.bar_brawl_music_disc": "Bar Brawl Music Disc",
+    "item.mymod.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)"
+}
