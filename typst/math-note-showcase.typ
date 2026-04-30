@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "@local/math-note:0.1.0": *
 
 #show: note-template
 
