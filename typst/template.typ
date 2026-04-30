@@ -1,11 +1,12 @@
 #let note-template(body) = {
   set page(
+    fill: rgb("#1e1e1e"),
     paper: "a4",
     margin: (left: 2.8cm, right: 2.8cm, top: 3cm, bottom: 3cm),
   )
 
   set text(
-    fill: black,
+    fill: rgb("#ccc"),
     font: ("New Computer Modern", "Noto Serif CJK SC"),
     lang: "zh",
     region: "cn",

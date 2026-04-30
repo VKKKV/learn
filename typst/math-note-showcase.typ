@@ -4,7 +4,7 @@
 
 #set document(
   title: "综合数学笔记示例",
-  author: "Arch Btw",
+  author: "vkkkv",
 )
 
 = 综合数学笔记示例
