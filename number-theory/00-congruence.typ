@@ -3,7 +3,7 @@
 
 #set document(
   title: "同余",
-  author: "Arch User",
+  author: "vkkkv",
 )
 
 = 同余（Congruence Modulo）

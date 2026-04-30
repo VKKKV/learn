@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "类欧几里德算法", author: "Arch User")
+#set document(title: "类欧几里德算法", author: "vkkkv")
 
 = 类欧几里德算法
 

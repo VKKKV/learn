@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "数论分块", author: "Arch User")
+#set document(title: "数论分块", author: "vkkkv")
 
 = 数论分块
 

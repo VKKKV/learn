@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "Min_25 筛", author: "Arch User")
+#set document(title: "Min_25 筛", author: "vkkkv")
 
 = Min_25 筛
 

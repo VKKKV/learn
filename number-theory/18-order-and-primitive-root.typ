@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "阶与原根", author: "Arch User")
+#set document(title: "阶与原根", author: "vkkkv")
 
 = 阶与原根
 

@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "高次剩余与单位根", author: "Arch User")
+#set document(title: "高次剩余与单位根", author: "vkkkv")
 
 = 高次剩余与单位根
 

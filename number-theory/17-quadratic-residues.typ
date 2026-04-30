@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "二次剩余", author: "Arch User")
+#set document(title: "二次剩余", author: "vkkkv")
 
 = 二次剩余
 

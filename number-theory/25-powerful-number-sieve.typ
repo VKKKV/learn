@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "Powerful Number 筛", author: "Arch User")
+#set document(title: "Powerful Number 筛", author: "vkkkv")
 
 = Powerful Number 筛
 

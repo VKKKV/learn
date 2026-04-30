@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "Pell 方程", author: "Arch User")
+#set document(title: "Pell 方程", author: "vkkkv")
 
 = Pell 方程
 

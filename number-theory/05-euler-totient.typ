@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "欧拉函数", author: "Arch User")
+#set document(title: "欧拉函数", author: "vkkkv")
 
 = 欧拉函数
 

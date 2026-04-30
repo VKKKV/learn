@@ -1,7 +1,7 @@
 #import "@local/math-note:0.1.0": *
 #show: note-template
 
-#set document(title: "离散对数", author: "Arch User")
+#set document(title: "离散对数", author: "vkkkv")
 
 = 离散对数
 
