@@ -8,6 +8,7 @@ A comprehensive collection of learning projects, exercises, and experiments acro
 - **[Assembly](./assemble/)**: x86-64 assembly experiments using AT&T syntax.
 - **[C](./c/)**: Fundamental C programming projects.
 - **[Rust](./rust/)**: Various Rust projects including CLI tools (`minigrep`) and language fundamentals.
+- **[Zig](./zig/)**: Zig language experiments, including hello-world and systems programming basics.
 - **[QEMU](./qemu/)**: Virtualization configurations and environment setups.
 
 ### 🌐 Web & Backend
